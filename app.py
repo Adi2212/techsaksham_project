@@ -73,45 +73,91 @@ elif selected == '❤️ Heart Disease':
         CP = create_input('Chest Pain Type', 'CP')
         Trestbps = create_input('Resting Blood Pressure', 'Trestbps')
         Chol = create_input('Cholesterol Level', 'Chol')
-    with col2:
         FBS = create_input('Fasting Blood Sugar > 120 mg/dl (1=True, 0=False)', 'FBS')
         RestECG = create_input('Resting ECG Results', 'RestECG')
+
+    with col2:
+        
         Thalach = create_input('Max Heart Rate', 'Thalach')
         Exang = create_input('Exercise Induced Angina (1=Yes, 0=No)', 'Exang')
-    inputs = [Age, Sex, CP, Trestbps, Chol, FBS, RestECG, Thalach, Exang]
+        Oldpeak = create_input('ST Depression Induced by Exercise', 'Oldpeak')
+        Slope = create_input('Slope of Peak Exercise ST Segment (0, 1, 2)', 'Slope')
+        CA = create_input('Major Vessels Colored by Fluoroscopy (0-3)', 'CA')
+        Thal = create_input('Thal (0=Normal, 1=Fixed Defect, 2=Reversible Defect)', 'Thal')
+
+    inputs = [Age, Sex, CP, Trestbps, Chol, FBS, RestECG, Thalach, Exang, Oldpeak, Slope, CA, Thal]
 
 elif selected == '🧠 Parkinsons':
     with col1:
-        MDVP_Fo = create_input('MDVP:Fo(Hz)', 'MDVP_Fo')
-        MDVP_Fhi = create_input('MDVP:Fhi(Hz)', 'MDVP_Fhi')
-        MDVP_Flo = create_input('MDVP:Flo(Hz)', 'MDVP_Flo')
+        Fo = create_input('MDVP:Fo(Hz)', 'Fo')
+        Fhi = create_input('MDVP:Fhi(Hz)', 'Fhi')
+        Flo = create_input('MDVP:Flo(Hz)', 'Flo')
+        Jitter_percent = create_input('MDVP:Jitter(%)', 'Jitter_percent')
+        Jitter_Abs = create_input('MDVP:Jitter(Abs)', 'Jitter_Abs')
+        RAP = create_input('MDVP:RAP', 'RAP')
+        PPQ = create_input('MDVP:PPQ', 'PPQ')
+        DDP = create_input('Jitter:DDP', 'DDP')
+        Shimmer = create_input('MDVP:Shimmer', 'Shimmer')
+        Shimmer_dB = create_input('MDVP:Shimmer(dB)', 'Shimmer_dB')
+        APQ3 = create_input('Shimmer:APQ3', 'APQ3')
+
     with col2:
-        Jitter = create_input('Jitter(%)', 'Jitter')
-        Shimmer = create_input('Shimmer(%)', 'Shimmer')
+        APQ5 = create_input('Shimmer:APQ5', 'APQ5')
+        APQ = create_input('MDVP:APQ', 'APQ')
+        DDA = create_input('Shimmer:DDA', 'DDA')
+        NHR = create_input('NHR', 'NHR')
         HNR = create_input('HNR', 'HNR')
-    inputs = [MDVP_Fo, MDVP_Fhi, MDVP_Flo, Jitter, Shimmer, HNR]
+        RPDE = create_input('RPDE', 'RPDE')
+        DFA = create_input('DFA', 'DFA')
+        Spread1 = create_input('Spread1', 'Spread1')
+        Spread2 = create_input('Spread2', 'Spread2')
+        D2 = create_input('D2', 'D2')
+        PPE = create_input('PPE', 'PPE')
+
+    inputs = [
+    float(Fo), float(Fhi), float(Flo),
+    float(Jitter_percent), float(Jitter_Abs), float(RAP),
+    float(PPQ), float(DDP), float(Shimmer),
+    float(Shimmer_dB), float(APQ3), float(APQ5),
+    float(APQ), float(DDA), float(NHR),
+    float(HNR), float(RPDE), float(DFA),
+    float(Spread1), float(Spread2), float(D2), float(PPE)
+]
 
 elif selected == '🫁 Lung Cancer':
     with col1:
-        Age = create_input('Age', 'Age')
-        Smoking = create_input('Smoking (1=Yes, 0=No)', 'Smoking')
-        Yellow_Fingers = create_input('Yellow Fingers (1=Yes, 0=No)', 'Yellow_Fingers')
+        GENDER = create_input('Gender (1 = Male; 0 = Female)', 'GENDER')
+        AGE = create_input('Age', 'AGE')
+        SMOKING = create_input('Smoking (1 = Yes; 0 = No)', 'SMOKING')
+        YELLOW_FINGERS = create_input('Yellow Fingers (1 = Yes; 0 = No)', 'YELLOW_FINGERS')
+        ANXIETY = create_input('Anxiety (1 = Yes; 0 = No)', 'ANXIETY')
+        PEER_PRESSURE = create_input('Peer Pressure (1 = Yes; 0 = No)', 'PEER_PRESSURE')
+        CHRONIC_DISEASE = create_input('Chronic Disease (1 = Yes; 0 = No)', 'CHRONIC_DISEASE')
+        FATIGUE = create_input('Fatigue (1 = Yes; 0 = No)', 'FATIGUE')
+
     with col2:
-        Anxiety = create_input('Anxiety (1=Yes, 0=No)', 'Anxiety')
-        Peer_Pressure = create_input('Peer Pressure (1=Yes, 0=No)', 'Peer_Pressure')
-        Chronic_Disease = create_input('Chronic Disease (1=Yes, 0=No)', 'Chronic_Disease')
-    inputs = [Age, Smoking, Yellow_Fingers, Anxiety, Peer_Pressure, Chronic_Disease]
+        ALLERGY = create_input('Allergy (1 = Yes; 0 = No)', 'ALLERGY')
+        WHEEZING = create_input('Wheezing (1 = Yes; 0 = No)', 'WHEEZING')
+        ALCOHOL_CONSUMING = create_input('Alcohol Consuming (1 = Yes; 0 = No)', 'ALCOHOL_CONSUMING')
+        COUGHING = create_input('Coughing (1 = Yes; 0 = No)', 'COUGHING')
+        SHORTNESS_OF_BREATH = create_input('Shortness Of Breath (1 = Yes; 0 = No)', 'SHORTNESS_OF_BREATH')
+        SWALLOWING_DIFFICULTY = create_input('Swallowing Difficulty (1 = Yes; 0 = No)', 'SWALLOWING_DIFFICULTY')
+        CHEST_PAIN = create_input('Chest Pain (1 = Yes; 0 = No)', 'CHEST_PAIN')
+
+    inputs = [GENDER, AGE, SMOKING,YELLOW_FINGERS,ANXIETY,PEER_PRESSURE,CHRONIC_DISEASE,FATIGUE,ALLERGY,WHEEZING,ALCOHOL_CONSUMING,COUGHING,SHORTNESS_OF_BREATH,SWALLOWING_DIFFICULTY,CHEST_PAIN]
 
 elif selected == '🔬 Hypo-Thyroid':
     with col1:
         Age = create_input('Age', 'Age')
+        Sex= create_input('Sex','Sex')
         TSH = create_input('TSH Level', 'TSH')
         T3 = create_input('T3 Level', 'T3')
     with col2:
         TT4 = create_input('TT4 Level', 'TT4')
         T4U = create_input('T4U Level', 'T4U')
         FTI = create_input('FTI Level', 'FTI')
-    inputs = [Age, TSH, T3, TT4, T4U, FTI]
+    inputs = [Age,Sex, TSH, T3, TT4, T4U, FTI]
+
 
 # Prediction button
 if st.button(f'Predict {selected}'):
